@@ -1,0 +1,2 @@
+module RushingHelper
+end

@@ -1,0 +1,38 @@
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Team</th>
+    <th>Position</th>
+    <th>Rushing Attempts/Game Avg</th>
+    <th>Rushing Attempts</th>
+    <th>Total Rushing Yards</th>
+    <th>Rushing Avg Yards/Attempt</th>
+    <th>Rushing Yards/Game</th>
+    <th>Total Rushing Touchdowns</th>
+    <th>Longest Rush</th>
+    <th>Rushing First Downs</th>
+    <th>Rushing First Downs %</th>
+    <th>Rushing 20+ Yards Each</th>
+    <th>Rushing 40+ Yards Each</th>
+    <th>Rushing Fumbles</th>
+  </tr>
+<% @rushes.each do |rush| %>
+  <tr>
+    <td><%= rush.player %></td>
+    <td><%= rush.team %></td>
+    <td><%= rush.pos.to_s %></td>
+    <td><%= rush.att %></td>
+    <td><%= rush.att_per_g %></td>
+    <td><%= rush.yds %></td>
+    <td><%= rush.avg %></td>
+    <td><%= rush.yds_per_g %></td>
+    <td><%= rush.td %></td>
+    <td><%= rush.lng %></td>
+    <td><%= rush.first %></td>
+    <td><%= rush.first_percent %></td>
+    <td><%= rush.twenty_plus %></td>
+    <td><%= rush.forty_plus %></td>
+    <td><%= rush.fum %></td>
+  </tr>
+<% end %>
+</table>
