@@ -4,6 +4,7 @@ namespace :rush_db do
     Rush.delete_all
     JSON.parse(File.read('public/rushing.json')).each do |rush_stat|
       yds = rush_stat["Yds"].is_a?(Integer) ? rush_stat["Yds"] : rush_stat["Yds"].gsub(/\D/, '').to_i
+      lng = rush_stat["Lng"].is_a?(Integer) ? rush_stat["Lng"] : rush_stat["Lng"].gsub(/\D/, '').to_i
       Rush.create(
         player: rush_stat["Player"],
         team: rush_stat["Team"],
@@ -14,7 +15,7 @@ namespace :rush_db do
         avg: rush_stat["Avg"],
         yds_per_g: rush_stat["Yds/G"],
         td: rush_stat["TD"],
-        lng: rush_stat["Lng"],
+        lng: lng,
         first: rush_stat["1st"],
         first_percent: rush_stat["1st%"],
         twenty_plus: rush_stat["20+"],

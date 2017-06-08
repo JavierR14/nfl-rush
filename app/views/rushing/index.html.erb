@@ -1,3 +1,11 @@
+<div class="download">
+  <%= link_to "Download CSV", rushing_index_path(format: "csv", direction: @sort_direction, column: @sort_column, search: @player) %>
+</div>
+
+<%= form_tag(rushing_index_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<%= submit_tag "Search" %>
+<% end %>
 <table>
   <tr>
     <th>Player</th>
@@ -5,11 +13,11 @@
     <th>Position</th>
     <th>Rushing Attempts/Game Avg</th>
     <th>Rushing Attempts</th>
-    <th>Total Rushing Yards</th>
+    <th><%= sortable "yds", "Total Rushing Yards", @player %></th>
     <th>Rushing Avg Yards/Attempt</th>
     <th>Rushing Yards/Game</th>
-    <th>Total Rushing Touchdowns</th>
-    <th>Longest Rush</th>
+    <th><%= sortable "td", "Total Rushing Touchdowns", @player %></th>
+    <th><%= sortable "lng", "Longest Rush", @player %></th>
     <th>Rushing First Downs</th>
     <th>Rushing First Downs %</th>
     <th>Rushing 20+ Yards Each</th>

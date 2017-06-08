@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170606185701) do
+ActiveRecord::Schema.define(version: 20170607140022) do
 
   create_table "rushes", force: :cascade do |t|
     t.string "player"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20170606185701) do
     t.float "avg"
     t.float "yds_per_g"
     t.integer "td"
-    t.string "lng"
+    t.integer "lng"
     t.integer "first"
     t.float "first_percent"
     t.integer "twenty_plus"
